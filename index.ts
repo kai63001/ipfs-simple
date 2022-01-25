@@ -3,22 +3,13 @@ import express from 'express';
 const ipfs = create({host:'ipfs.infura.io',port:5001,protocol:'https'})
 const app = express();
 
-
-// const test = async () => {
-//   const client = create()
-//   const { cid } = await client.add('I KUY NUT!!!')
-//     console.log(cid)
-
-// };
-
-// test();
 app.use(express.json());
 
 app.get('/', (req:any, res:any) => {
     return res.send('Welcome to my IPFS app');
 });
 
-app.get('/upload', async (req:any, res:any) => {
+app.get('/upload-text', async (req:any, res:any) => {
     const data = req.body;
     console.log(data);
     const fileHash = await addFile(data);
@@ -31,6 +22,10 @@ const addFile = async ({ path, content }:any) => {
     console.log(filesAdded)
     return filesAdded.cid;
 }
+
+app.get('/upload-image',async (req:any,res:any)=>{
+    
+})
 
 app.listen(3000, () => {
     console.log('Server running on port 3000');
