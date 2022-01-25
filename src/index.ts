@@ -1,5 +1,6 @@
 import { create } from 'ipfs-http-client'
 import express from 'express';
+import path from "path";
 const ipfs = create({host:'ipfs.infura.io',port:5001,protocol:'https'})
 const app = express();
 
@@ -24,7 +25,7 @@ const addFile = async ({ path, content }:any) => {
 }
 
 app.get('/upload-image',async (req:any,res:any)=>{
-    
+    res.sendFile(path.join(__dirname, '../publish/index.html'));
 })
 
 app.listen(3000, () => {
