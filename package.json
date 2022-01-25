@@ -12,11 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
     "ipfs": "^0.61.0",
     "ipfs-core": "^0.13.0",
     "ipfs-http-client": "^55.0.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13"
+    "@types/express": "^4.17.13",
+    "@types/express-fileupload": "^1.2.2"
   }
 }
